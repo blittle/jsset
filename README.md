@@ -1,7 +1,7 @@
 jsset
 =====
 
-A basic set implemented in raw JavaScript
+A basic set implemented in raw JavaScript. Why? For fun.
 
 ```javascript
 // The default comparator handles numbers and strings
