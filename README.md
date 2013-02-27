@@ -13,7 +13,12 @@ var set2 = new Set(function(el1, el2) {
 });
 
 // Can chain methods
-set1.add(1).add(2).add(3).remove(2).remove(1);
+set1
+  .add(1)
+  .add(2)
+  .add(3)
+  .remove(2)
+  .remove(1);
 
 // All available methods
 set1.add(4);
