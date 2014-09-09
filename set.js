@@ -1,3 +1,5 @@
+!function(glob) {
+
 var Set = function(comparator) {
     this._objs = [];
     this._comparator = comparator || function(val1, val2) {
@@ -69,6 +71,12 @@ Set.prototype = {
     }
 };
 
-module.exports = exports = Set;
+if(typeof exports === 'object') {
+    module.exports = exports = Set;
+}
+
+glob.Set = Set;
+
+}(this);
 
 
