@@ -35,3 +35,23 @@ set1.add(4, function(el1, el2) {
   return 0;
 });
 ```
+
+##Running the Tests
+Node.js is required to run the unit tests. After installing Node, install the local packages with:
+```
+git clone https://github.com/blittle/jsset.git
+cd jsset
+npm install
+```
+
+Make sure karma is installed:
+```
+npm install -g karma-cli
+```
+
+Run the tests!
+```
+karma start
+```
+
+
