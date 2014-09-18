@@ -43,4 +43,19 @@ describe("setjs", function() {
         expect(mySpy).toHaveBeenCalledWith("b");
         expect(mySpy).not.toHaveBeenCalledWith("c");
     });
+
+    it('should lazy loop through elements', function(run) {
+        var items = ["a", "b", "c"];
+
+        items.forEach(function(item) {
+            mySet.add(item);
+        });
+
+        mySet.lazyEach(function(value, index, next) {
+            expect(items[index]).toBe(value);
+            next();
+
+            if(index === 2) run();
+        });
+    });
 });

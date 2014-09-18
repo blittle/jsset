@@ -15,7 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      '*.js'
+      'set.js',
+      'set.spec.js'
     ],
 
 
@@ -34,7 +35,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress', 'coverage', 'junit'],
 
 
     // web server port
@@ -66,6 +67,11 @@ module.exports = function(config) {
     coverageReporter: {
       type : 'html',
       dir : 'coverage/'
+    },
+
+    junitReporter: {
+      outputFile: 'test-results.xml',
+      suite: ''
     }
   });
 };

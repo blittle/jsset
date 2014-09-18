@@ -68,6 +68,28 @@ Set.prototype = {
         for(var i = 0, length = this._objs.length; i < length; i++) {
             callback(this._objs[i]);
         }
+
+        return this;
+    },
+
+    lazyEach: function(callback) {
+
+        var i = -1, 
+            scope = this,
+            length = this._objs.length;
+
+        function next() {
+            i++;
+            if(i === length) return;
+
+            setTimeout(function() {
+                callback(scope._objs[i], i, next);
+            }, 0);
+        }
+
+        setTimeout(next, 0);
+
+        return this;
     }
 };
 
